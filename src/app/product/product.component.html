@@ -24,7 +24,10 @@
       <tbody>
         <tr *ngFor="let item of productArr;let i=index">
           <th scope="row">{{item.count}}</th>
-          <td><a href="detail/{{item.count}}" target="_blank"> {{item.title}}</a></td>
+          <td>
+           <!---- <a href="detail/{{item.count}}" target="_blank"> {{item.title}}</a>!-->
+           <button (click)="fncGoToDetail(item.count)" class="btn btn-primary btn-sm btn-block">{{item.title}}</button>
+          </td>
           <td>{{item.detail}}</td>
           <td><button (click)="fncDeleteProduct(i)" class="btn btn-danger btn-sm">Delete</button></td>
         </tr>

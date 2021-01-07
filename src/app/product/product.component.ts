@@ -1,6 +1,6 @@
 import { productExtraData } from './../../data';
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -15,7 +15,7 @@ export class ProductComponent implements OnInit {
   //productArr=[{title:"",detail:""}]
   productArr=productExtraData
   count=productExtraData[2].count+1
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -51,6 +51,14 @@ export class ProductComponent implements OnInit {
  }
 
 
+  }
+  fncGoToDetail(id:Number){
+
+    const sendItem=(this.productArr[id-1])
+    localStorage.setItem("item",btoa(JSON.stringify(sendItem)))
+
+
+    this.router.navigate(["detail",id])
   }
 
 }

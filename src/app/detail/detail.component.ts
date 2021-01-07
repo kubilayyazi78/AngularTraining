@@ -8,7 +8,21 @@ import { ActivatedRoute } from '@angular/router'
 export class DetailComponent implements OnInit {
 
    pullId=""
-  constructor(private route:ActivatedRoute) { }
+   pullData={}
+  constructor(private route:ActivatedRoute) {
+
+    const item=localStorage.getItem('item');
+    if(item){
+      try {
+        this.pullData=JSON.parse(atob(item));
+      } catch (error) {
+        this.pullData={}
+        alert("Invalidate Product Data")
+      }
+
+    }
+
+   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params)=>{
