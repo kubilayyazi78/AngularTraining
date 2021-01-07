@@ -1,3 +1,4 @@
+import { productExtraData } from './../../data';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,8 +13,8 @@ export class ProductComponent implements OnInit {
   title=""
   detail=""
   //productArr=[{title:"",detail:""}]
-  productArr=[]
-  count=1
+  productArr=productExtraData
+  count=productExtraData[2].count+1
   constructor() { }
 
   ngOnInit(): void {
@@ -38,6 +39,17 @@ export class ProductComponent implements OnInit {
     this.detail=""
     this.count++;
    }
+
+  }
+  fncDeleteProduct(id:Number){
+    console.log(id)
+   //this.productArr= this.productArr.slice(id,this.productArr.length)
+ const answer=confirm("Silmek istediğine emin misinz ?")
+ if(answer){
+  this.productArr.splice(id,1)
+  this.count--
+ }
+
 
   }
 

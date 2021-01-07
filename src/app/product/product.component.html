@@ -18,13 +18,15 @@
           <th scope="col">ID</th>
           <th scope="col">Title</th>
           <th scope="col">Detail</th>
+          <th scope="col">Delete</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of productArr">
+        <tr *ngFor="let item of productArr;let i=index">
           <th scope="row">{{item.count}}</th>
-          <td>{{item.title}}</td>
+          <td><a href="detail/{{item.count}}" target="_blank"> {{item.title}}</a></td>
           <td>{{item.detail}}</td>
+          <td><button (click)="fncDeleteProduct(i)" class="btn btn-danger btn-sm">Delete</button></td>
         </tr>
       </tbody>
     </table>
