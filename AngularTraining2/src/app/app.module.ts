@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule ,ErrorHandler} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+
+import {GlobalError} from './global-error';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +28,11 @@ import { ColorDirective } from './directives/color.directive';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+
+  provide:ErrorHandler,
+  useClass:GlobalError
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

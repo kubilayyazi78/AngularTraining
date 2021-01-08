@@ -1,3 +1,4 @@
+import { RestService } from './../service/rest.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -12,9 +13,21 @@ export class SettingsComponent implements OnInit {
   greenColor="green"
 
 
-  constructor() { }
+  constructor(private restService:RestService) { }
 
   ngOnInit(): void {
+
+    const params={}
+    this.restService.funcCategory(params).then(res=>{
+
+     console.log(res)
+
+    })
+
+    /*.catch(err=>{
+
+        console.error(err)
+    })*/
   }
 
 }

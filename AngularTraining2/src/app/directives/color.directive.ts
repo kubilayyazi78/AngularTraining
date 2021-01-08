@@ -3,7 +3,7 @@ import { Directive ,ElementRef,Input,OnInit} from '@angular/core';
 @Directive({
   selector: '[appColor]'
 })
-export class ColorDirective {
+export class ColorDirective implements OnInit {
 
   @Input() appColor:string="";
 
