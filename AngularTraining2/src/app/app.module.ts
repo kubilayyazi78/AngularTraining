@@ -8,13 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavmenuComponent } from './navmenu/navmenu.component';
 import { FormsModule } from '@angular/forms';
+import { SettingsComponent } from './settings/settings.component';
+import { ColorDirective } from './directives/color.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    NavmenuComponent
+    NavmenuComponent,
+    SettingsComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule,

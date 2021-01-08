@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-
+import {SeoService} from '../service/seo.service'
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -10,7 +10,7 @@ export class DashboardComponent implements OnInit {
 
 productArr=[]
 
-  constructor(private http : HttpClient ) {
+  constructor(private http : HttpClient ,private seoService:SeoService) {
     const params={
    ref:"5380f5dbcc3b1021f93ab24c3a1aac24",
    start:"0"
@@ -28,6 +28,9 @@ productArr=[]
   }
 
   ngOnInit(): void {
+
+this.seoService.updateTitle("Admin Dashboard");
+this.seoService.updateMeta("description","AngularProject Manager")
   }
 
 }

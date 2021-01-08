@@ -1,3 +1,4 @@
+import { SettingsComponent } from './settings/settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
@@ -32,7 +33,8 @@ function userControlURL(url:string){
 
 const routes: Routes = [
   {path:"",component :LoginComponent},
-  {path:"dashboard" ,component:DashboardComponent}
+  {path:"dashboard" ,component:DashboardComponent},
+  {path:"settings" ,component:SettingsComponent}
   //{path:"dashboard",redirectTo:userControl("dashboard") ,component:userControl(DashboardComponent)}
 
 ];
