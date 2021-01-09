@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+
+<div  *ngFor="let item of productArr" class="card" style="width: 18rem;">
+  <img  class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{item.title}}</h5>
+    <p class="card-text">{{item.price}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<app-footer></app-footer>
