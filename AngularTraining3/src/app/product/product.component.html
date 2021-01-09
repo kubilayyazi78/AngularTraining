@@ -1,6 +1,22 @@
 <app-header></app-header>
 
 
+<div>
+<input [(ngModel)]="name" type="text" placeholder="Name" class="form-control" >
+</div>
+<hr>
+<p>{{name}}</p>
+<div>
+  <input  type="text" placeholder="Surname" #surname class="form-control">
+  </div>
+<hr>
+
+<button (click)="fncSendData()"  class="btn btn-primary" type="button">Send</button>
+
+
+<hr>
+
+
 <div  *ngFor="let item of productArr" class="card" style="width: 18rem;">
   <img  class="card-img-top">
   <div class="card-body">
@@ -9,5 +25,9 @@
     <a (click)="fncAddBasket(item)" class="btn btn-primary">Add Basket</a>
   </div>
 </div>
+<hr>
+<button (click)="sampleData=math.random()" class="btn btn-danger">Change</button>
+
+<button (click)="destroy=true" class="btn btn-success">Destroy</button>
 
 <app-footer></app-footer>
