@@ -2,7 +2,7 @@ import { UserModel } from './../user-model';
 import { NewsModel } from './../news-model';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-//import { NewsModel } from "../news-model";
+import *as $  from  'jquery'
 
 @Component({
   selector: 'app-news',
